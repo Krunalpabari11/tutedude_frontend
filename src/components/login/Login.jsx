@@ -19,7 +19,7 @@ const Login = () => {
     if(email === '' || password === '') return
 
     try {
-      const res = await fetch(`http://localhost:5000/auth/login`, {
+      const res = await fetch(`https://tutudude.onrender.com/auth/login`, {
         headers: {
           'Content-Type': 'application/json',
         },

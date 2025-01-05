@@ -36,7 +36,7 @@ const [showMobileNav, setShowMobileNav] = useState(false)
 useEffect(() => {
   const fetchAllUsers = async() => {
     try {
-      const res = await fetch(`http://localhost:5000/user/findAll`)
+      const res = await fetch(`https://tutudude.onrender.com/user/findAll`)
       const data = await res.json()
 
       setAllUsers(data)
@@ -74,7 +74,7 @@ const handleUpdateProfile = async(e) => {
     formData.append('filename', filename)
     formData.append('image', photo)
     
-    await fetch(`http://localhost:5000/upload/image`, {
+    await fetch(`https://tutudude.onrender.com/upload/image`, {
       headers: {
         'Authorization': `Bearer ${token}`
       },
@@ -85,7 +85,7 @@ const handleUpdateProfile = async(e) => {
     
 
   try {
-    const res = await fetch(`http://localhost:5000/user/updateUser/${user._id}`, {
+    const res = await fetch(`https://tutudude.onrender.com/user/updateUser/${user._id}`, {
       headers: {
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${token}`
@@ -187,7 +187,7 @@ return (
                   <div onClick={() => setSearchText("")} className={classes.allUsersContainer}>
                     {filteredUsers?.map((user) => (
                       <Link to={`/profileDetail/${user._id}`} key={user._id} onClick={() => setShowMobileNav(false)}>
-                        <img src={user?.photo ? `http://localhost:5000/images/${user.photo}` : man} />
+                        <img src={user?.photo ? `https://tutudude.onrender.com/images/${user.photo}` : man} />
                         <div className={classes.userData}>
                           <span>{user?.username}</span>
                           <span>{user?.bio?.slice(0, 10)}</span>
@@ -205,7 +205,7 @@ return (
                 </div>
                 <img
                   onClick={() => setShowModal(!showModal)}
-                  src={user?.profileImg ? `http://localhost:5000/images/${user?.profileImg}` : man}
+                  src={user?.profileImg ? `https://tutudude.onrender.com/images/${user?.profileImg}` : man}
                   className={classes.profileUserImg}
                 />
                 {showModal && (

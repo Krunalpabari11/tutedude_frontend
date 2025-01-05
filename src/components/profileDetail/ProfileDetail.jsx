@@ -21,7 +21,7 @@ const ProfileDetail = () => {
   useEffect(() => {
     const fetchProfile = async() => {
        try {
-        const res = await fetch(`http://localhost:5000/user/find/${id}`, {
+        const res = await fetch(`https://tutudude.onrender.com/user/find/${id}`, {
           headers: {
             'Authorization': `Bearer ${token}`
           }
@@ -43,7 +43,7 @@ const ProfileDetail = () => {
   useEffect(() => {
     const fetchProfilePosts = async() => {
       try {
-        const res = await fetch(`http://localhost:5000/post/find/userposts/${id}`)
+        const res = await fetch(`https://tutudude.onrender.com/post/find/userposts/${id}`)
 
         const data = await res.json()
 
@@ -58,7 +58,7 @@ const ProfileDetail = () => {
   // handle follow function
   const handleFollowFunction = async() => {
     try {
-      await fetch(`http://localhost:5000/user/toggleFollow/${profile?._id}`, {
+      await fetch(`https://tutudude.onrender.com/user/toggleFollow/${profile?._id}`, {
         headers: {
           'Authorization': `Bearer ${token}`
         },
@@ -88,7 +88,7 @@ const ProfileDetail = () => {
         <div className={classes.top}>
           <div className={classes.topLeftSide}>
             <img 
-             src={profile?.profileImg ? `http://localhost:5000/images/${profile?.profileImg}` : man}
+             src={profile?.profileImg ? `https://tutudude.onrender.com/images/${profile?.profileImg}` : man}
              className={classes.profileImg}
             />
           </div>

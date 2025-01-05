@@ -19,7 +19,7 @@ const PostDetails = () => {
   useEffect(() => {
     const fetchPost = async () => {
       try {
-        const res = await fetch(`http://localhost:5000/post/find/${id}`)
+        const res = await fetch(`https://tutudude.onrender.com/post/find/${id}`)
         const data = await res.json()
         setPost(data)
       } catch (error) {
@@ -32,7 +32,7 @@ const PostDetails = () => {
   useEffect(() => {
     const fetchComments = async () => {
       try {
-        const res = await fetch(`http://localhost:5000/comment/${id}`, {
+        const res = await fetch(`https://tutudude.onrender.com/comment/${id}`, {
           headers: {
             "Authorization": `Bearer ${token}`
           }
@@ -65,7 +65,7 @@ const PostDetails = () => {
      }
 
      try {
-      const res = await fetch(`http://localhost:5000/comment`, {
+      const res = await fetch(`https://tutudude.onrender.com/comment`, {
         headers: {
           'Content-Type': 'application/json',
           'Authorization': `Bearer ${token}`
@@ -86,7 +86,7 @@ const PostDetails = () => {
     <div className={classes.container}>
       <div className={classes.wrapper}>
         <div className={classes.left}>
-          <img src={post?.photo && `http://localhost:5000/images/${post?.photo}`} />
+          <img src={post?.photo && `https://tutudude.onrender.com/images/${post?.photo}`} />
         </div>
         <div className={classes.right}>
           <div className={classes.wrapperTopSide}>

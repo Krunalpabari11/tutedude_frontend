@@ -12,7 +12,7 @@ const Posts = () => {
   useEffect(() => {
     const fetchPosts = async() => {
       try {
-        const res = await fetch(`http://localhost:5000/post/timeline/posts`, {
+        const res = await fetch(`https://tutudude.onrender.com/post/timeline/posts`, {
           headers: {
             'Authorization': `Bearer ${token}`
           }

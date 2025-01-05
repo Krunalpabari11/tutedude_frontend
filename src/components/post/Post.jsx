@@ -28,7 +28,7 @@ const Post = ({ post }) => {
   useEffect(() => {
     const fetchComments = async () => {
       try {
-        const res = await fetch(`http://localhost:5000/comment/${post._id}`, {
+        const res = await fetch(`https://tutudude.onrender.com/comment/${post._id}`, {
           headers: {
             "Authorization": `Bearer ${token}`
           }
@@ -45,7 +45,7 @@ const Post = ({ post }) => {
 
   const deletePost = async () => {
     try {
-      await fetch(`http://localhost:5000/post/${post._id}`, {
+      await fetch(`https://tutudude.onrender.com/post/${post._id}`, {
         headers: {
           "Authorization": `Bearer ${token}`
         },
@@ -59,7 +59,7 @@ const Post = ({ post }) => {
 
   const handleLikePost = async () => {
     try {
-      await fetch(`http://localhost:5000/post/toggleLike/${post._id}`, {
+      await fetch(`https://tutudude.onrender.com/post/toggleLike/${post._id}`, {
         headers: {
           "Authorization": `Bearer ${token}`
         },
@@ -73,7 +73,7 @@ const Post = ({ post }) => {
 
   const handleBookmark = async () => {
     try {
-      await fetch(`http://localhost:5000/user/bookmark/${post._id}`, {
+      await fetch(`https://tutudude.onrender.com/user/bookmark/${post._id}`, {
         headers: {
           "Authorization": `Bearer ${token}`
         },
@@ -96,7 +96,7 @@ const Post = ({ post }) => {
     }
 
     try {
-      const res = await fetch(`http://localhost:5000/comment`, {
+      const res = await fetch(`https://tutudude.onrender.com/comment`, {
         headers: {
           "Content-Type": 'application/json',
           "Authorization": `Bearer ${token}`
@@ -145,7 +145,7 @@ const Post = ({ post }) => {
         <div className={classes.center}>
           <div className={classes.desc}>{post.desc}</div>
           {post?.location && <div className={classes.location}>Location: {post.location}</div>}
-          <img className={classes.postImg} src={post?.photo ? `http://localhost:5000/images/${post?.photo}` : woman} />
+          <img className={classes.postImg} src={post?.photo ? `https://tutudude.onrender.com/images/${post?.photo}` : woman} />
         </div>
         <div className={`${classes.controls} ${showComment && classes.showComment}`}>
           <div className={classes.controlsLeft}>
